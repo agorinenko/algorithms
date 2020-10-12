@@ -22,9 +22,8 @@ class SelectionSort:
                     current_min_position = from_position + j
 
             # Производим обмен этого значения со значением первой неотсортированной позиции
-            if current_min_position != i:
-                tmp = sequence[i]
-                sequence[i] = sequence[current_min_position]
-                sequence[current_min_position] = tmp
+            tmp = sequence[i]
+            sequence[i] = sequence[current_min_position]
+            sequence[current_min_position] = tmp
 
         return sequence
