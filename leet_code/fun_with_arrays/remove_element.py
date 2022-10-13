@@ -21,7 +21,7 @@ class Solution:
 
         for idx in range(len(nums)):
             p = idx - k
-            if nums[p] == val:
+            if nums[p] == 0:
                 for i in range(p + 1, len(nums)):
                     nums[i - 1] = nums[i]
 
