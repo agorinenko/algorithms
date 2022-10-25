@@ -2,6 +2,7 @@
 https://leetcode.com/explore/learn/card/hash-table/183/combination-with-other-algorithms/1131/
 """
 
+
 class Solution:
     def is_happy_1(self, n: int) -> bool:
         def get_next(n):
@@ -40,7 +41,6 @@ class Solution:
             n = _sum(parts)
             if n == 1 or n == 7:
                 return True
-
 
             if n < 10:
                 return False
