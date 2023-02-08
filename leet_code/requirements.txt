@@ -1,7 +1,0 @@
-pylint
-pytest
-
-coverage
-pytest-cov
-pytest-aiohttp
-pytest-mock
