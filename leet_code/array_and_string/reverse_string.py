@@ -6,6 +6,23 @@ https://leetcode.com/explore/learn/card/array-and-string/204/conclusion/1165/
 from typing import List
 
 
+def test_reverse_arr():
+    arr = [1, 2, 3, 4, 5, 6]
+    arr = reverse_arr(arr)
+    print(arr)
+
+
+def reverse_arr(arr: List[int]) -> list:
+    i = 0
+    j = len(arr) - 1
+    while i < j:
+        arr[i], arr[j] = arr[j], arr[i]
+        i += 1
+        j -= 1
+
+    return arr
+
+
 class Solution:
     def reverse_words(self, s: str) -> str:
         def _reverse_string(s: List[str]) -> str:

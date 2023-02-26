@@ -1,6 +1,9 @@
 from typing import List
 
 
+def test_main_1():
+    assert Solution().romanToInt('LVIII') == 58
+
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
         # [1] for fast linear-time detection of next-greater
