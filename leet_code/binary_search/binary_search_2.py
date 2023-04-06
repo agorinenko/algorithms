@@ -17,22 +17,22 @@ def test_binary_search_2():
     assert -1 == Solution().search(arr, 3)
 
 
-def find_min(arr: list[int]):
-    left = 0
-    right = len(arr) - 1
-
-    if len(arr) == 1:
+def find_min(nums: list[int]):
+    if len(nums) == 1:
         return 0
 
-    if arr[left] < arr[right]:
+    left, right = 0, len(nums) - 1
+
+    if len(nums) == 2 and nums[left] < nums[right]:
         return left
 
     while left < right:
         mid = (left + right) // 2
-        if arr[mid] > arr[right]:
+        if nums[mid] > nums[right]:
             left = mid + 1
         else:
             right = mid
+
     return left
 
 
