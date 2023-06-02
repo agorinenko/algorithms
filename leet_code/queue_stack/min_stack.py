@@ -4,7 +4,9 @@ https://leetcode.com/explore/learn/card/queue-stack/230/usage-stack/1360/
 
 
 class MinStack:
-
+    """
+    Реализация стека на основе динамического массива
+    """
     def __init__(self):
         self.stack = []
 

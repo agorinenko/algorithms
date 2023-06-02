@@ -1,6 +1,3 @@
-import bisect
-
-
 def test_my_sqrt():
     x = 16
     assert 4 == my_sqrt(x)
