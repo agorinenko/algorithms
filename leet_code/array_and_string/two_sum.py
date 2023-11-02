@@ -2,29 +2,19 @@ from typing import List
 
 
 def test_1():
-    a = 100000
-    b = 100000
-    assert id(a) == id(b)  # true or false?
-
-    # assert Solution().twoSum([3, 2, 4], 6) == [1, 2]
+    assert Solution().twoSum([3, 2, 4], 6) == [1, 2]
 
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         num_dict = {}
         for i, n in enumerate(nums):
-            if n in num_dict:
-                num_dict[n].append(i)
-            else:
-                num_dict[n] = [i]
-
-        for i, n in enumerate(nums):
             delta = target - n
-            if delta in num_dict and delta != n:
-                return [i, num_dict[delta][0]]
 
-            if delta in num_dict and delta == n and len(num_dict[delta]) > 1:
-                return num_dict[delta]
+            if delta in num_dict:
+                return [num_dict[delta], i]
+            else:
+                num_dict[n] = i
 
         return []
 
