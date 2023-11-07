@@ -1,12 +1,33 @@
 """
 https://leetcode.com/explore/learn/card/queue-stack/230/usage-stack/1361/
 """
+def test_main_1():
+    assert Solution().isValid("()")
 
+
+def test_main_2():
+    assert Solution().isValid("()[]{}")
+
+
+def test_main_3():
+    assert not Solution().isValid("(]")
+
+
+def test_main_4():
+    assert Solution().isValid("([{}])")
+
+
+def test_main_5():
+    assert not Solution().isValid("((")
+
+def test_main_6():
+    assert not Solution().isValid("){")
 
 class Solution:
     def isValid(self, s: str) -> bool:
         if len(s) <= 1:
             return False
+
         stack = []
         open_chars = ['(', '[', '{']
         close_chars = [')', ']', '}']
