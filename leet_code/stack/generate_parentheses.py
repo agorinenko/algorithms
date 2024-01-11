@@ -1,5 +1,4 @@
-import itertools
-from typing import List, Tuple
+from typing import List
 
 
 def test_1():
@@ -8,31 +7,22 @@ def test_1():
 
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        arr = ['('] * n + [')'] * n
-        perms = itertools.permutations(arr)
-        res = set()
-        for perm in perms:
-            if perm not in res and is_valid(perm):
-                res.add(perm)
+        stack = []
+        res = []
 
-        return [''.join(p) for p in res ]
-
-
-def is_valid(s: Tuple[str]) -> bool:
-    if len(s) <= 1:
-        return False
-
-    stack = []
-    for c in s:
-        if c == '(':
-            stack.append(c)
-        elif c == ')':
-            if not stack:
-                return False
-
-            if stack[-1] == '(':
-                stack.pop()
+        def backtrack(open_count: int, close_count: int):
+            if open_count == n and close_count == n:
+                res.append(''.join(stack))
             else:
-                return False
+                if open_count < n:
+                    stack.append('(')
+                    backtrack(open_count + 1, close_count)
+                    stack.pop()
 
-    return len(stack) == 0
+                if close_count < open_count:
+                    stack.append(')')
+                    backtrack(open_count, close_count + 1)
+                    stack.pop()
+
+        backtrack(0, 0)
+        return res

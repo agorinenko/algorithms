@@ -147,11 +147,7 @@ class Solution:
 
         # Iterate by list2
         i = 1
-        print('\n')
-        print('list 1')
-        print_linked_list(list_1)
-        print('list 2')
-        print_linked_list(list_2)
+
         for prev_node, next_node in iterate_by_list(list_2):
             # if empty list
             if not list_1:
